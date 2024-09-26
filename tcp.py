@@ -122,17 +122,15 @@ print(f'UDP: {ip_udp}')
 
 packet_tcp = ip_tcp.pack()
 packet_udp = ip_udp.pack()
+
 print(f'Packet TCP: {packet_tcp}')
 print(f'Packet UDP: {packet_udp}')
 
 hex_data_tcp = to_hex(packet_tcp)
 hex_data_udp = to_hex(packet_udp)
 
-
 print(f'HEX-data TCP: {hex_data_tcp}')
 print(f'HEX-data UDP: {hex_data_udp}')
-
-
 
 print(f'RAW data TCP: {hex_to_read(hex_data_tcp)}')
 print(f'RAW data UDP: {hex_to_read(hex_data_udp)}')
@@ -142,6 +140,6 @@ print(f'BINASCII UDP: {binascii_data(hex_to_read(hex_data_udp))}')
 
 print(f'READ IP HEADER TCP: {parse_ip_header(packet_tcp)}')
 print(f'READ main TCP: {parse_tcp_header(packet_tcp)}')
+
 print(f'READ IP HEADER UDP: {parse_ip_header(packet_udp)}')
 print(f'READ main UDP: {parse_udp_header(packet_udp)}')
-
